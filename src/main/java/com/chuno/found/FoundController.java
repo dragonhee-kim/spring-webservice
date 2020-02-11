@@ -14,7 +14,7 @@ public class FoundController {
 
     @GetMapping("/")
     public String home(){
-
+        System.out.println(this.foundRepository.findAll());
 
 
         return "home";

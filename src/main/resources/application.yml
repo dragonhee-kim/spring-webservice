@@ -1,5 +1,4 @@
-server:
-  port: 8808
+
 spring:
   datasource:
     url: jdbc:mariadb://49.50.164.116:3306/chuno
