@@ -1,0 +1,15 @@
+server:
+  port: 8808
+spring:
+  datasource:
+    url: jdbc:mariadb://49.50.164.116:3306/chuno
+    username: root
+    password: dydrkfl1@3
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+      hibernate.hbm2ddl.import_files_sql_extractor: org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor
