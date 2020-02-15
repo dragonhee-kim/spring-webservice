@@ -41,7 +41,7 @@ public class FoundController {
         System.out.println("ho");
         System.out.println(dto);
         System.out.println(dto.toEntity());
-        System.out.println(dto.getFound_name());
+        System.out.println(dto.getFound_title());
         System.out.println(dto.getFound_content());
 
         System.out.println("h2");

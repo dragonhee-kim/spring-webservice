@@ -15,7 +15,7 @@ public class FoundDto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long found_id;
 
-    private String found_name;
+    private String found_title;
     private String found_content;
     private String found_photo;
     private String mem_id;
@@ -24,7 +24,7 @@ public class FoundDto {
         return Found.builder()
 
                 .mem_id(mem_id)
-                .found_name(found_name)
+                .found_title(found_title)
                 .found_content(found_content)
                 .found_photo(found_photo)
 
