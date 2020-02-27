@@ -29,6 +29,8 @@ public class Sender {
         ProducerRecord<String,String> producerRecord = new ProducerRecord<>(topic,objectMapper.writeValueAsString(payload));
         LOGGER.info("test2");
         kafkaTemplate.send(producerRecord);
+        kafkaTemplate.flush();
+
         LOGGER.info("test3");
     }
 

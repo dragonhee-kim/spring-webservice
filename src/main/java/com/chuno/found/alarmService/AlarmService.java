@@ -9,7 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import sun.net.www.http.HttpClient;
+
+
+
+
 
 import java.net.URI;
 import java.util.*;
@@ -24,11 +27,6 @@ public class AlarmService {
 
     // LostService 에 Rest API 조회를 통해 해당 카테고리의 분실물자 정보 조회
     public void getLostItemInfo(String category){
-        HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
-        factory.setConnectTimeout(5000);
-        factory.setReadTimeout(5000);
-
-        //HttpClient httpClient = HttpClientBuilder.create()
 
         String lostServiceUrl = "http://localhost/lost/item/list";
         URI uri = URI.create(lostServiceUrl);
