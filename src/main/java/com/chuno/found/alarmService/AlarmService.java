@@ -29,6 +29,7 @@ public class AlarmService {
 
     // LostService 에 Rest API 조회를 통해 해당 카테고리의 분실물자 정보 조회
     public void getLostItemInfo(String category){
+        LOGGER.info("1111111111111111111111");
         HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
         factory.setConnectTimeout(5000);
         factory.setReadTimeout(5000);
@@ -38,26 +39,27 @@ public class AlarmService {
                 .setMaxConnTotal(100)
                 .build();
         factory.setHttpClient(httpClient);
-
+        LOGGER.info("222222222222222222222");
         String lostServiceUrl = "http://localhost/lost/item/list";
         URI uri = URI.create(lostServiceUrl);
 
         RestTemplate restTemplate = new RestTemplate(factory);
-
+        LOGGER.info("3333333333333333333333");
         Map<String, Object> param = new HashMap<>();
         param.put("category", category);
 
         Lost[] losts = restTemplate.postForObject(uri,param,Lost[].class);
-
+        LOGGER.info("44444444444444444444444444");
         List<Lost> lostList = new LinkedList<>();
         if(losts != null && losts.length>0){
             lostList = Arrays.asList(losts);
         }
-
+        LOGGER.info("55555555555555555555555555555");
         String topic = "msa_test_20200224";
         Map<String, Object> payload = new HashMap<>();
         payload.put("service","AlarmService");
         payload.put("key","alarm");
+        LOGGER.info("666666666666666666 "+lostList.size());
 
         if(lostList.size() > 0){
             StringBuilder lost_user_id = new StringBuilder();
