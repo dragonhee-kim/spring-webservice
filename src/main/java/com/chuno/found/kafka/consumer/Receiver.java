@@ -41,7 +41,7 @@ public class Receiver {
                 String category = payload.get("category").toString();
 
                 LOGGER.info("go to alarm " );
-                System.out.println("go to alarm ");
+
 
                 alarmService.getLostItemInfo(category);
             }

@@ -3,6 +3,8 @@ package com.chuno.found.alarmService;
 import com.chuno.found.kafka.producer.Sender;
 import com.chuno.found.lostService.Lost;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +29,20 @@ public class AlarmService {
 
     // LostService 에 Rest API 조회를 통해 해당 카테고리의 분실물자 정보 조회
     public void getLostItemInfo(String category){
+        HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
+        factory.setConnectTimeout(5000);
+        factory.setReadTimeout(5000);
+
+        HttpClient httpClient = HttpClientBuilder.create()
+                .setMaxConnPerRoute(5)
+                .setMaxConnTotal(100)
+                .build();
+        factory.setHttpClient(httpClient);
 
         String lostServiceUrl = "http://localhost/lost/item/list";
         URI uri = URI.create(lostServiceUrl);
-        RestTemplate restTemplate = new RestTemplate();
+
+        RestTemplate restTemplate = new RestTemplate(factory);
 
         Map<String, Object> param = new HashMap<>();
         param.put("category", category);
