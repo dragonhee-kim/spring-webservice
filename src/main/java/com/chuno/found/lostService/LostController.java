@@ -47,12 +47,17 @@ public class LostController {
         return lostService.selectLostListByCaetgory(category);
     }
 
-    @PostMapping("/item/list")
+    @PostMapping("/item/listall")
     public @ResponseBody
     List<Lost> selectFindAllList(@RequestBody Map<String, Object> param){
         return lostService.selectLostAllList();
     }
 
+    @PostMapping("/item/list")
+    public @ResponseBody
+    List<Lost> selectFindListByCategory(@RequestParam String category){
+        return lostService.selectLostListByCaetgory(category);
+    }
 
 
 }

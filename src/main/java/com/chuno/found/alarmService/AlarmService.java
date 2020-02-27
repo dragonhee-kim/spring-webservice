@@ -65,19 +65,19 @@ public class AlarmService {
             StringBuilder lost_user_id = new StringBuilder();
             for(Lost lost : lostList) {
                 LOGGER.info("물건을 잃어 버린 사람의 ID: " + lost.getLostUserId());
-                System.out.println("물건을 잃어 버린 사람의 ID: " + lost.getLostUserId());
+
                 lost_user_id.append(lost.getLostUserId()).append(",");
             }
             payload.put("lost_user_id", lost_user_id);
         }
         else{
             LOGGER.info("물건이 잃어 버린 사람이 없습니다.");
-            System.out.println("물건이 잃어 버린 사람이 없습니다.");
+
         }
 
         try{
             LOGGER.info("alarm에서 kafka로 send, topic : " +topic);
-            System.out.println("alarm에서 kafka로 send. topic : "+topic);
+
             sender.send(topic,payload);
         } catch (JsonProcessingException e) {
             e.printStackTrace();

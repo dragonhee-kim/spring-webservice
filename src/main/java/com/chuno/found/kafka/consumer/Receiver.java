@@ -34,7 +34,7 @@ public class Receiver {
 
 
             LOGGER.info("Receiver in FindService -  " );
-            System.out.println("Receiver in FindService ");
+
 
             //물품을 습득했을때
             if(key.equals("find")){
