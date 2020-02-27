@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import sun.rmi.runtime.Log;
 
 import java.util.List;
 import java.util.Map;
@@ -56,6 +57,9 @@ public class LostController {
     @PostMapping("/item/list")
     public @ResponseBody
     List<Lost> selectFindListByCategory(@RequestParam Map<String, Object> param){
+        LOGGER.debug("param  "+param);
+        LOGGER.debug("category  "+param.get("category"));
+
         return lostService.selectLostListByCaetgory((String) param.get("category"));
     }
 
