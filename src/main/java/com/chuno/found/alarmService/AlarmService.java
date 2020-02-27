@@ -40,7 +40,7 @@ public class AlarmService {
                 .build();
         factory.setHttpClient(httpClient);
         LOGGER.info("222222222222222222222");
-        String lostServiceUrl = "http://localhost/lost/item/list";
+        String lostServiceUrl = "http://49.50.167.142:8080/lost/item/list";
         URI uri = URI.create(lostServiceUrl);
 
         RestTemplate restTemplate = new RestTemplate(factory);
