@@ -18,5 +18,4 @@ spring:
     bootstrap-servers: localhost:9092
     consumer:
       group-id: ktds-kafka
-  autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+ 
