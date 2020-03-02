@@ -1,7 +1,6 @@
 package com.chuno.found.findService;
 
 
-import com.chuno.found.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,11 +12,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
 
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
-public class Find extends BaseTimeEntity {
+public class Find {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

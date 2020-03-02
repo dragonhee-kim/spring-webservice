@@ -18,4 +18,4 @@ spring:
     bootstrap-servers: localhost:9092
     consumer:
       group-id: ktds-kafka
-
+ 
