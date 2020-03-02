@@ -44,7 +44,7 @@ public class AlarmService {
         URI uri = URI.create(lostServiceUrl);
 
         RestTemplate restTemplate = new RestTemplate(factory);
-        LOGGER.info("3333333333333333333333 category :" + category);
+        LOGGER.info("3333333333333333333333");
         Map<String, Object> param = new HashMap<>();
         param.put("category", category);
 
