@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.2.4.RELEASE'
     id 'io.spring.dependency-management' version '1.0.9.RELEASE'
     id 'java'
+    id 'eclipse' //추가
 }
 
 group = 'com.chuno'
@@ -16,6 +17,7 @@ configurations {
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
