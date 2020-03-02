@@ -56,7 +56,7 @@ public class LostController {
 
     @PostMapping("/item/list")
     public @ResponseBody
-    List<Lost> selectFindListByCategory(@RequestParam Map<String, Object> param){
+    List<Lost> selectFindListByCategory(@RequestBody Map<String, Object> param){
         LOGGER.debug("param  "+param);
         LOGGER.debug("category  "+param.get("category"));
 

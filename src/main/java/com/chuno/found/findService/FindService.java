@@ -56,7 +56,10 @@ public class FindService {
     public void insertFind(Find find){
         // 우선 습득물 db저장
         findRepository.save(find.toEntity());
+        List<Find> finds = findRepository.findAll();
+        Find f1 = finds.get(0);
 
+                //       LOGGER.info("createdAt : "+find.);
         String category = find.getCategory();
         String topic = "msa_test_20200224";
         Map<String, Object> payload = new HashMap<>();

@@ -1,5 +1,6 @@
 package com.chuno.found.dao;
 
+import com.chuno.found.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import javax.persistence.*;
 @Entity
 //@NamedQuery(name="Found.myTest", query = "SELECT * FROM found as f WHERE f.found_id = ?") //쿼리 만들수 있다.
 //@Entity("found") -> found와 매핑인가?
-public class Found {
+public class Found extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
