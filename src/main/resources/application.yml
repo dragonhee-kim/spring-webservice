@@ -15,7 +15,7 @@ spring:
       hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
       hibernate.hbm2ddl.import_files_sql_extractor: org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: 49.50.167.142:9092
     consumer:
-      group-id: ktds-kafka
+      group-id: dragon-kafka
  

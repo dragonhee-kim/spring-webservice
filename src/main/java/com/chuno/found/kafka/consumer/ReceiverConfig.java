@@ -22,7 +22,7 @@ public class ReceiverConfig {
     private String broker;
 
    @Value("${spring.kafka.consumer.group-id}")
-    private String groupId;// = "ktds-kafka";
+    private String groupId;
 
     @Bean
     public Map<String, Object> consumerConfig(){

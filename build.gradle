@@ -28,10 +28,17 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.1'
     implementation 'com.googlecode.json-simple:json-simple:1.1.1' //json
-// https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
     compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5'
     // https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka
     compile group: 'org.springframework.kafka', name: 'spring-kafka', version: '2.4.2.RELEASE'
+
+    // https://mvnrepository.com/artifact/com.google.firebase/firebase-admin
+    compile group: 'com.google.firebase', name: 'firebase-admin', version: '6.12.2'
+
+    // https://mvnrepository.com/artifact/org.json/json
+    compile group: 'org.json', name: 'json', version: '20160810'
 
 
     compileOnly 'org.projectlombok:lombok'
